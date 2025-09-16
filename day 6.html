@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 6 Challenge - Portfolio with JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      background: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    .container {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+    form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    form input, form textarea {
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Charan Sree Putta - Portfolio</h1>
+    <p>Electronics & Communication Engineering | Aspiring Scientist</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container" id="about">
+    <h2>About Me</h2>
+    <p>Hello! I am Charan Sree Putta, a 2nd year Electronics and Communication Engineering student with a deep passion for technology, quantum computing, supercomputers, astrophysics, communication systems, and nuclear fusion.  
+    My goal is to work across communication, quantum computing, and nuclear fusion before becoming a scientist. I am also fascinated by space research and aspire to contribute as an astrophysicist or astronaut in the future.</p>
+
+    <button onclick="toggleMode()">Toggle Dark/Light Mode</button>
+  </div>
+
+  <div class="container" id="projects">
+    <h2>Projects & Ideas</h2>
+    <ul>
+      <li><strong>Smartphone Recycling Kiosks:</strong> A business model to reduce India’s e-waste problem by installing kiosks at high-footfall stores for trade, resale, and recycling.</li>
+      <li><strong>Portfolio Development:</strong> Created responsive portfolio websites with HTML, CSS, and JavaScript as part of a 7-day challenge.</li>
+      <li><strong>Future Goals:</strong> Work on advanced research in communication, quantum computing, and nuclear fusion, aiming for contributions in space research and astrophysics.</li>
+    </ul>
+  </div>
+
+  <div class="container" id="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="return validateForm()">
+      <input type="text" id="name" placeholder="Your Name">
+      <input type="email" id="email" placeholder="Your Email">
+      <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="formMessage"></p>
+  </div>
+
+  <script>
+    // Dark/Light mode toggle
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    // Form validation
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let message = document.getElementById("message").value;
+      let formMessage = document.getElementById("formMessage");
+
+      if (name === "" || email === "" || message === "") {
+        formMessage.innerHTML = "⚠️ Please fill out all fields.";
+        formMessage.style.color = "red";
+        return false;
+      } else {
+        formMessage.innerHTML = "✅ Thank you! Your form has been submitted.";
+        formMessage.style.color = "green";
+        return false; // Prevents actual submission for demo
+      }
+    }
+  </script>
+</body>
+</html>
