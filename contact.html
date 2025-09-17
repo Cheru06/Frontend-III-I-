@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="interests.html">Interests</a>
+    <a href="contact.html" class="active">Contact</a>
+
+    <!-- Toggle Switch -->
+    <div class="toggle-container">
+      <input type="checkbox" id="theme-toggle">
+      <label for="theme-toggle" class="toggle-label">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <span class="ball"></span>
+      </label>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <section class="section">
+    <h1>Contact Me</h1>
+    <p>If you'd like to get in touch, feel free to reach out using the form below or connect with me on social platforms.</p>
+
+    <div class="card">
+      <form action="#" method="post" class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Other Ways to Connect</h2>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/putta-charan-sree-895511271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/Cheru06" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="mailto:charan5hs@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 My Portfolio. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script for toggle -->
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    toggle.addEventListener('change', () => {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+    });
+  </script>
+</body>
+</html>
